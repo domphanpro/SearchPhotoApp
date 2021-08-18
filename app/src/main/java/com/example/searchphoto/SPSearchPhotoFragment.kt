@@ -25,22 +25,27 @@ class SPSearchPhotoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         fragmentBinding = FragmentSpSearchPhotoBinding.inflate(inflater, container, false)
-        fragmentBinding.searchPhotoButton.setOnClickListener {
-            launchSearch()
-        }
         return fragmentBinding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        subscribeObservers()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        fragmentBinding.searchPhotoButton.setOnClickListener {
+            launchSearch()
+        }
+        setupRecyclerView()
     }
 
-    private fun subscribeObservers() {
-        viewModel.picturesState.observe(this, { pictureState ->
+    private fun setupRecyclerView() {
+        val adapter = SPPhotosAdapter()
+        fragmentBinding.searchPhotoRecyclerView.apply {
+            this.adapter = adapter
+        }
+
+        viewModel.picturesState.observe(viewLifecycleOwner, { pictureState ->
             when (pictureState) {
                 is DataState.Success<SearchPhotos> -> {
-                    println(pictureState)
+                    adapter.submitList(pictureState.data.results)
                 }
                 is DataState.Loading -> {
 

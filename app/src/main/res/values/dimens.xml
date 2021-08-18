@@ -3,4 +3,18 @@
     <dimen name="sp_tab_item_text_size">16sp</dimen>
     <dimen name="sp_tab_layout_height">56dp</dimen>
     <dimen name="sp_tab_layout_margin_top">10dp</dimen>
+
+
+    <dimen name="search_photo_item_size">80dp</dimen>
+    <dimen name="font_small">12sp</dimen>
+
+    <dimen name="margin_default">9dp</dimen>
+    <dimen name="margin_small">6dip</dimen>
+    <dimen name="margin_ultra_small">3dip</dimen>
+    <dimen name="margin_ultra_small_separator">1dip</dimen>
+    <dimen name="margin_double">12dip</dimen>
+    <dimen name="margin_triple">18dip</dimen>
+    <dimen name="search_photo_button_height">50dp</dimen>
+    <dimen name="search_photo_button_margin">50dp</dimen>
+
 </resources>
