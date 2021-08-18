@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SearchPhoto</string>
     <string name="generic_message_error">Une erreur est survenue lors de la récupération des données, veuillez vérifier que vous êtes bien connecté à Internet.</string>
+    <string name="sp_search_photo_tab">Recherche</string>
+    <string name="sp_favorite_tab">Favoris</string>
+    <string name="fragment_sp_search_photo_button_title">Lancer la recherche</string>
 </resources>

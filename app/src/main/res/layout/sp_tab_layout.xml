@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/sp_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sp_tab_layout_height"
+        android:layout_marginTop="@dimen/sp_tab_layout_margin_top"
+        android:visibility="gone"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        app:tabPaddingEnd="0dp"
+        app:tabPaddingStart="0dp"
+        app:tabMaxWidth="0dp"
+        app:tabGravity="fill"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/sp_tab_layout_separator"
+        style="@style/separator_grey"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/sp_tab_layout_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal" />
+
+</merge>

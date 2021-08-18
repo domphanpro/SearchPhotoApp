@@ -26,6 +26,7 @@ object LibraryDependency {
     const val activityKtx = "androidx.activity:activity-ktx:${Version.ACTIVITY_KTX}"
     const val recyclerview = "androidx.recyclerview:recyclerview:${Version.RECYCLERVIEW}"
     const val picasso = "com.squareup.picasso:picasso:${Version.PICASSO}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Version.FRAGMENT_KTX}"
 
     object Network {
         const val retrofit2 = "com.squareup.retrofit2:retrofit:${Version.RETROFIT_2}"
@@ -67,6 +68,7 @@ object LibraryDependency {
         const val ROOM = "2.3.0"
         const val LIFECYCLE = "2.3.1"
         const val ACTIVITY_KTX = "1.2.3"
+        const val FRAGMENT_KTX = "1.2.5"
         const val RECYCLERVIEW = "1.1.0"
         const val PICASSO = "2.71828"
 

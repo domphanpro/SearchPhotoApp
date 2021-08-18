@@ -61,6 +61,7 @@ dependencies {
 
     implementation(LibraryDependency.roomRuntime)
     implementation(LibraryDependency.roomKtx)
+    implementation (LibraryDependency.fragmentKtx)
     kapt(LibraryDependency.roomCompiler)
 
     implementation(LibraryDependency.daggerHilt)
