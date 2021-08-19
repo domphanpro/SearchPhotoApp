@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class GetPhotosByQueryUseCase @Inject constructor(private val repository: SearchPhotosRepository) {
 
-    fun invoke(query: String) = repository.getPhotosSearch(query)
+    fun getPhotosSearch(query: String) = repository.getPhotosSearch(query)
 
 }

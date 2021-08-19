@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val getPhotosByQuery: GetPhotosByQueryUseCase,
+class SPSearchPhotoViewModel @Inject constructor(private val getPhotosByQuery: GetPhotosByQueryUseCase,
                                         private val favoritePhotosUseCase: FavoritePhotosUseCase
 ) : ViewModel() {
 
@@ -29,7 +29,7 @@ class MainViewModel @Inject constructor(private val getPhotosByQuery: GetPhotosB
         viewModelScope.launch {
             when (photosStateEvent) {
                 is PhotosStateEvent.GetPhotosEvents -> {
-                    getPhotosByQuery.invoke(query)
+                    getPhotosByQuery.getPhotosSearch(query)
                             .onEach { pictureState ->
                                 _photosState.value = pictureState
                             }

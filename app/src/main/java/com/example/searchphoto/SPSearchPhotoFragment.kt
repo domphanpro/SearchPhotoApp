@@ -18,7 +18,7 @@ class SPSearchPhotoFragment : Fragment(), SPPhotosAdapter.PhotoListener {
 
     private lateinit var fragmentBinding: FragmentSpSearchPhotoBinding
 
-    private val viewModel: MainViewModel by activityViewModels()
+    private val viewModel: SPSearchPhotoViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
