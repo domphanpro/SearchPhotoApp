@@ -58,6 +58,7 @@ dependencies {
     implementation(LibraryDependency.recyclerview)
     implementation(LibraryDependency.picasso)
     implementation(LibraryDependency.Network.retrofit2)
+    implementation(LibraryDependency.Test.junitParams)
 
     implementation(LibraryDependency.roomRuntime)
     implementation(LibraryDependency.roomKtx)

@@ -1,10 +1,11 @@
-package com.example.searchphoto
+package com.example.searchphoto.ui.tab
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
+import com.example.searchphoto.R
 import com.example.searchphoto.databinding.SpTabItemBinding
 
 class SPTabItem @JvmOverloads constructor(

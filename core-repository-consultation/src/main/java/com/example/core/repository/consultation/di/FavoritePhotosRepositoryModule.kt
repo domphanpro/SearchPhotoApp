@@ -2,10 +2,7 @@ package com.example.core.repository.consultation.di
 
 import com.example.core.repository.consultation.repository.FavoritePhotosRepositoryImpl
 import com.example.core.repository.consultation.repository.FavoriteRepository
-import com.example.core.repository.consultation.repository.SearchPhotosRepository
-import com.example.core.repository.consultation.repository.SearchPhotosRepositoryImpl
 import com.example.core.repository.consultation.room.PhotoSPDao
-import com.example.core.repository.consultation.service.RetrofitConsultationService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

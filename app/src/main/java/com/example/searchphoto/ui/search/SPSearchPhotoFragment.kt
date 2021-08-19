@@ -1,4 +1,4 @@
-package com.example.searchphoto
+package com.example.searchphoto.ui.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.core.model.DataState
 import com.example.core.model.consultation.Result
 import com.example.core.model.consultation.SearchPhotos
+import com.example.searchphoto.R
 import com.example.searchphoto.databinding.FragmentSpSearchPhotoBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -69,7 +70,7 @@ class SPSearchPhotoFragment : Fragment(), SPPhotosAdapter.PhotoListener {
     private fun launchSearch() {
         viewModel.setStateEvent(
             fragmentBinding.searchPhotoSearchView.query.toString(),
-            PhotosStateEvent.GetPhotosEvents
+                PhotosStateEvent.GetPhotosEvents
         )
     }
 

@@ -1,4 +1,4 @@
-package com.example.searchphoto
+package com.example.searchphoto.ui.tab
 
 import android.content.Context
 import android.util.AttributeSet

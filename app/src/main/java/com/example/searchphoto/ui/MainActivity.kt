@@ -1,7 +1,9 @@
-package com.example.searchphoto
+package com.example.searchphoto.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.searchphoto.ui.tab.SPPagerAdapter
+import com.example.searchphoto.ui.tab.SPTabLayout
 import com.example.searchphoto.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

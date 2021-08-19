@@ -1,4 +1,4 @@
-package com.example.searchphoto
+package com.example.searchphoto.ui.favorite
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
+import com.example.searchphoto.R
 import com.example.searchphoto.databinding.PhotoItemBinding
 import com.squareup.picasso.Picasso
 

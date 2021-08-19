@@ -1,4 +1,4 @@
-package com.example.searchphoto.module
+package com.example.searchphoto.ui.module
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity

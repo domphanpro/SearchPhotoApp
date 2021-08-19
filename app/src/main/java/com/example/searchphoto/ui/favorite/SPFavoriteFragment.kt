@@ -1,4 +1,4 @@
-package com.example.searchphoto
+package com.example.searchphoto.ui.favorite
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.core.model.DataState
 import com.example.core.model.consultation.Result
+import com.example.searchphoto.R
 import com.example.searchphoto.databinding.FragmentSpFavoriteBinding
 import dagger.hilt.android.AndroidEntryPoint
 

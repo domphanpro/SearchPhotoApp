@@ -35,6 +35,7 @@ object LibraryDependency {
 
     object Test {
         const val junit = "junit:junit:${Version.JUNIT}"
+        const val junitParams = "pl.pragmatists:JUnitParams:${Version.JUNIT_PARAMS}"
         const val junitExt = "androidx.test.ext:junit:${Version.JUNIT_EXT}"
         const val espresso = "androidx.test.espresso:espresso-core:${Version.ESPRESSO_CORE}"
         const val assertjCore = "org.assertj:assertj-core:${Version.ASSERTJ}"
@@ -75,6 +76,7 @@ object LibraryDependency {
         //Test
         const val JUNIT = "4.13.2"
         const val JUNIT_EXT = "1.1.3"
+        const val JUNIT_PARAMS = "1.1.1"
         const val ESPRESSO_CORE = "3.4.0"
         const val ASSERTJ = "3.19.0"
         const val MOCKK = "1.11.0"

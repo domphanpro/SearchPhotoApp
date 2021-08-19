@@ -1,4 +1,4 @@
-package com.example.searchphoto
+package com.example.searchphoto.ui.favorite
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

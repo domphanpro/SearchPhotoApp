@@ -1,8 +1,10 @@
-package com.example.searchphoto
+package com.example.searchphoto.ui.tab
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.searchphoto.ui.favorite.SPFavoriteFragment
+import com.example.searchphoto.ui.search.SPSearchPhotoFragment
 
 class SPPagerAdapter(
         fragmentManager: FragmentManager
