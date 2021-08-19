@@ -4,4 +4,5 @@
     <string name="sp_search_photo_tab">Recherche</string>
     <string name="sp_favorite_tab">Favoris</string>
     <string name="fragment_sp_search_photo_button_title">Lancer la recherche</string>
+    <string name="add_favorite_message_success">Cet élément a été ajouté au favoris</string>
 </resources>

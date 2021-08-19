@@ -8,12 +8,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.core.model.DataState
+import com.example.core.model.consultation.Result
 import com.example.core.model.consultation.SearchPhotos
 import com.example.searchphoto.databinding.FragmentSpSearchPhotoBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SPSearchPhotoFragment : Fragment() {
+class SPSearchPhotoFragment : Fragment(), SPPhotosAdapter.PhotoListener {
 
     private lateinit var fragmentBinding: FragmentSpSearchPhotoBinding
 
@@ -37,7 +38,7 @@ class SPSearchPhotoFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        val adapter = SPPhotosAdapter()
+        val adapter = SPPhotosAdapter(this)
         fragmentBinding.searchPhotoRecyclerView.apply {
             this.adapter = adapter
         }
@@ -70,6 +71,15 @@ class SPSearchPhotoFragment : Fragment() {
             fragmentBinding.searchPhotoSearchView.query.toString(),
             PhotosStateEvent.GetPhotosEvents
         )
+    }
+
+    override fun onItemClicked(photo: Result) {
+        Toast.makeText(
+                requireContext(),
+                getString(R.string.add_favorite_message_success),
+                Toast.LENGTH_LONG
+        ).show()
+        viewModel.insertPhoto(photo)
     }
 
 }

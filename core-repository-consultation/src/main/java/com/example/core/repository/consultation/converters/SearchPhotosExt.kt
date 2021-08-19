@@ -6,6 +6,7 @@ import com.example.core.model.consultation.UrlsPhoto
 import com.example.core.repository.consultation.model.ResultResponse
 import com.example.core.repository.consultation.model.SearchPhotosResponse
 import com.example.core.repository.consultation.model.UrlsPhotoResponse
+import com.example.core.repository.consultation.room.Result as ModelDBPhotoSP
 
 internal fun SearchPhotosResponse.toModel() = SearchPhotos(
     total = total,
@@ -18,7 +19,7 @@ internal fun ResultResponse.toModel() = Result(
     description = description,
     created_at = created_at,
     id = id,
-    urls = urls.toModel()
+    urlThumb = urls.thumb
 )
 
 internal fun UrlsPhotoResponse.toModel() = UrlsPhoto(
@@ -27,4 +28,20 @@ internal fun UrlsPhotoResponse.toModel() = UrlsPhoto(
     regular = regular,
     small = small,
     thumb = thumb
+)
+
+internal fun ModelDBPhotoSP.toModel() = Result(
+    alt_description = alt_description,
+    description = description,
+    created_at = created_at,
+    id = id,
+    urlThumb = urls
+)
+
+internal fun Result.toModel() = ModelDBPhotoSP(
+    alt_description = alt_description,
+    description = description,
+    created_at = created_at,
+    id = id,
+    urls = urlThumb
 )

@@ -4,13 +4,14 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import com.example.core.model.consultation.Result as ResultPhotos
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.example.searchphoto.databinding.PhotoItemBinding
 import com.squareup.picasso.Picasso
 
-class SPPhotosAdapter(private val listener: PhotoListener) :
-        RecyclerView.Adapter<SPPhotosAdapter.SPPhotosViewHolder>() {
+class SPFavoriteAdapter :
+    RecyclerView.Adapter<SPFavoriteAdapter.SPFavoriteViewHolder>() {
 
     private val diffUtilItemCallback = object : DiffUtil.ItemCallback<ResultPhotos>() {
 
@@ -28,12 +29,12 @@ class SPPhotosAdapter(private val listener: PhotoListener) :
 
     private lateinit var binding: PhotoItemBinding
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SPPhotosViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SPFavoriteViewHolder {
         binding = PhotoItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return SPPhotosViewHolder(binding, listener)
+        return SPFavoriteViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: SPPhotosViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SPFavoriteViewHolder, position: Int) {
         holder.bind(listDiffer.currentList[position])
     }
 
@@ -45,29 +46,25 @@ class SPPhotosAdapter(private val listener: PhotoListener) :
         listDiffer.submitList(list)
     }
 
-    class SPPhotosViewHolder
+    class SPFavoriteViewHolder
     constructor(
-            private val binding: PhotoItemBinding,
-            private val listener: PhotoListener
+        private val binding: PhotoItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: ResultPhotos) {
 
             binding.textTitlePhoto.text = item.description ?: item.alt_description
+            binding.favoritePhoto.isVisible = false
 
             Picasso.get().load(item.urlThumb)
-                    .placeholder(R.drawable.picture_placeholder)
-                    .error(R.drawable.picture_placeholder)
-                    .into(binding.imagePhoto)
+                .placeholder(R.drawable.picture_placeholder)
+                .error(R.drawable.picture_placeholder)
+                .into(binding.imagePhoto)
 
-            binding.favoritePhoto.setOnClickListener {
-                listener.onItemClicked(photo = item)
+            binding.root.setOnClickListener {
+
             }
         }
-    }
-
-    interface PhotoListener {
-        fun onItemClicked(photo: ResultPhotos)
     }
 
 }

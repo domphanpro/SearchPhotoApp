@@ -5,5 +5,5 @@ data class Result(
     val description: String?,
     val created_at: String,
     val id: String,
-    val urls: UrlsPhoto,
+    val urlThumb: String,
     )

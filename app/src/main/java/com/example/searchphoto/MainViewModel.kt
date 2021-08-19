@@ -5,7 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.core.model.DataState
+import com.example.core.model.consultation.Result
 import com.example.core.model.consultation.SearchPhotos
+import com.example.core.repository.consultation.usecases.FavoritePhotosUseCase
 import com.example.core.repository.consultation.usecases.GetPhotosByQueryUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -14,8 +16,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val getPhotosByQuery: GetPhotosByQueryUseCase) :
-        ViewModel() {
+class MainViewModel @Inject constructor(private val getPhotosByQuery: GetPhotosByQueryUseCase,
+                                        private val favoritePhotosUseCase: FavoritePhotosUseCase
+) : ViewModel() {
 
     private val _photosState: MutableLiveData<DataState<SearchPhotos>> = MutableLiveData()
     val picturesState: LiveData<DataState<SearchPhotos>>
@@ -37,6 +40,12 @@ class MainViewModel @Inject constructor(private val getPhotosByQuery: GetPhotosB
                     //No Action
                 }
             }
+        }
+    }
+
+    fun insertPhoto(photo: Result) {
+        viewModelScope.launch {
+            favoritePhotosUseCase.insert(photo)
         }
     }
 }
